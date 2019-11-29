@@ -1,5 +1,5 @@
 {% set name = "dagster_papertrail" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 2f7befae4c2f211377582d3d700a2e48ad49e9795dcc5b4dd9b5c39495ec16bd
+  sha256: 7e20db76991b4982dfc290a6a40c9ff8b2be08fd8d7faf68895d1dea57fea597
 
 build:
   number: 0
@@ -35,4 +35,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - xhochy
+    - conda-forge/dagster
