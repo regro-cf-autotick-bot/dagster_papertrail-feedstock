@@ -1,18 +1,18 @@
 {% set name = "dagster_papertrail" %}
-{% set version = "0.6.5" %}
+{% set version = "0.7.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 7e20db76991b4982dfc290a6a40c9ff8b2be08fd8d7faf68895d1dea57fea597
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('_', '-') }}-{{ version }}.tar.gz
+  sha256: 2e89e8acffd6f10806cb2d28f2c9881a601930a9b491cd50596d791a83390491
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -27,11 +27,11 @@ test:
     - dagster_papertrail
 
 about:
-  home: "https://github.com/dagster-io/dagster/tree/master/python_modules/libraries/dagster-papertrail"
+  home: https://github.com/dagster-io/dagster/tree/master/python_modules/libraries/dagster-papertrail
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: "Package for papertrail Dagster framework components."
+  summary: Package for papertrail Dagster framework components.
 
 extra:
   recipe-maintainers:
